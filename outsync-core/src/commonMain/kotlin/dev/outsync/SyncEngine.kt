@@ -210,6 +210,10 @@ public class SyncEngine<T : Any>(
         }
     }
 
+    public suspend fun refreshStatus() {
+        refreshPending()
+    }
+
     private suspend fun refreshPending() {
         val pending = outbox.size()
         _status.update { it.copy(pendingCount = pending) }

@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "outsync"
 include(":outsync-core")
+include(":outsync-android")
