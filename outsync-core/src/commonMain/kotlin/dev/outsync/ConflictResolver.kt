@@ -1,4 +1,4 @@
-package dev.imdroid.sync
+package dev.outsync
 
 public fun interface ConflictResolver<T : Any> {
     public suspend fun resolve(local: T?, remote: T?): Resolution<T>

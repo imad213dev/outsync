@@ -1,4 +1,4 @@
-package dev.imdroid.sync
+package dev.outsync
 
 public data class SyncStatus(
     val isSyncing: Boolean = false,

@@ -1,4 +1,4 @@
-package dev.imdroid.sync
+package dev.outsync
 
 public interface LocalStore<T : Any> {
     public suspend fun get(id: String): T?

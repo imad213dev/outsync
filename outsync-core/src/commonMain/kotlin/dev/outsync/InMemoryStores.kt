@@ -1,4 +1,4 @@
-package dev.imdroid.sync
+package dev.outsync
 
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock

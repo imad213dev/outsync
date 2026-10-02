@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "imdroid"
-include(":imdroid-sync-core")
+rootProject.name = "outsync"
+include(":outsync-core")

@@ -1,4 +1,4 @@
-package dev.imdroid.sync
+package dev.outsync
 
 public interface EntityAdapter<T : Any> {
     public fun idOf(entity: T): String

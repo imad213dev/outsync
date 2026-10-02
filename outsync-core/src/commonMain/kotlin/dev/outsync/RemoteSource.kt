@@ -1,4 +1,4 @@
-package dev.imdroid.sync
+package dev.outsync
 
 public interface RemoteSource<T : Any> {
     public suspend fun push(mutation: Mutation<T>): PushResult<T>

@@ -1,4 +1,4 @@
-package dev.imdroid.sync
+package dev.outsync
 
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest

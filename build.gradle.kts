@@ -3,6 +3,6 @@ plugins {
 }
 
 allprojects {
-    group = "dev.imdroid"
+    group = "dev.outsync"
     version = "0.1.0-SNAPSHOT"
 }

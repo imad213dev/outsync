@@ -1,4 +1,4 @@
-package dev.imdroid.sync
+package dev.outsync
 
 data class Note(val id: String, val title: String, val body: String = "", val version: Long? = null)
 

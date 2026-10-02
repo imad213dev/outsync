@@ -1,4 +1,4 @@
-package dev.imdroid.sync
+package dev.outsync
 
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.Flow

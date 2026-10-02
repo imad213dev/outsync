@@ -1,4 +1,4 @@
-package dev.imdroid.sync
+package dev.outsync
 
 public data class Mutation<T : Any>(
     val mutationId: String,
