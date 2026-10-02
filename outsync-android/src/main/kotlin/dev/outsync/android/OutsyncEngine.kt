@@ -23,6 +23,7 @@ public fun <T : Any> outsyncEngine(
     config: SyncConfig = SyncConfig(),
     autoSync: Boolean = true,
     periodicInterval: Duration? = 15.minutes,
+    syncOnStart: Boolean = true,
 ): SyncEngine<T> {
     val engine = SyncEngine(
         adapter = adapter,
@@ -33,6 +34,6 @@ public fun <T : Any> outsyncEngine(
         resolver = resolver,
         config = config,
     )
-    if (autoSync) Outsync.register(context, name, engine, periodicInterval)
+    if (autoSync) Outsync.register(context, name, engine, periodicInterval, syncOnStart)
     return engine
 }

@@ -35,12 +35,14 @@ public object Outsync {
         name: String,
         engine: SyncEngine<*>,
         periodicInterval: Duration? = 15.minutes,
+        syncOnStart: Boolean = true,
     ) {
         val app = context.applicationContext
         engines[name] = engine
         watchers.remove(name)?.cancel()
         watchers[name] = scope.launch {
             engine.refreshStatus()
+            if (syncOnStart && engine.status.value.pendingCount > 0) launch { engine.sync() }
             var last = 0
             engine.status.map { it.pendingCount }.distinctUntilChanged().collect { pending ->
                 if (pending > last) requestSync(app, name)
