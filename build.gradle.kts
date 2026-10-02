@@ -5,7 +5,9 @@ plugins {
     alias(libs.plugins.kotlin.multiplatform) apply false
 }
 
+val onJitPack = System.getenv("JITPACK") != null
+
 allprojects {
-    group = "dev.outsync"
-    version = "0.1.0-SNAPSHOT"
+    group = if (onJitPack) "com.github.imad213dev.outsync" else "io.github.imad213dev"
+    version = System.getenv("VERSION").takeIf { onJitPack && !it.isNullOrBlank() } ?: "0.1.0"
 }

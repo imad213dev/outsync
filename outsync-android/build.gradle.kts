@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
+    `maven-publish`
 }
 
 android {
@@ -18,6 +19,21 @@ android {
 
     testOptions {
         unitTests.isIncludeAndroidResources = true
+    }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
+}
+
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            artifactId = "outsync-android"
+            afterEvaluate { from(components["release"]) }
+        }
     }
 }
 

@@ -1,0 +1,4 @@
+jdk:
+  - openjdk17
+install:
+  - ./gradlew :outsync-core:publishToMavenLocal :outsync-android:publishToMavenLocal -x test
