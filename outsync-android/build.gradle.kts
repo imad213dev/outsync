@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
-    `maven-publish`
+    alias(libs.plugins.maven.publish)
 }
 
 android {
@@ -20,21 +20,6 @@ android {
     testOptions {
         unitTests.isIncludeAndroidResources = true
     }
-
-    publishing {
-        singleVariant("release") {
-            withSourcesJar()
-        }
-    }
-}
-
-publishing {
-    publications {
-        register<MavenPublication>("release") {
-            artifactId = "outsync-android"
-            afterEvaluate { from(components["release"]) }
-        }
-    }
 }
 
 kotlin {
@@ -52,4 +37,14 @@ dependencies {
     testImplementation(libs.androidx.test.core)
     testImplementation(libs.androidx.work.testing)
     testImplementation(libs.kotlinx.coroutines.test)
+}
+
+mavenPublishing {
+    configure(
+        com.vanniktech.maven.publish.AndroidSingleVariantLibrary(
+            variant = "release",
+            sourcesJar = true,
+            publishJavadocJar = true,
+        )
+    )
 }

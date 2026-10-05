@@ -4,6 +4,7 @@ coroutines = "1.9.0"
 agp = "9.2.1"
 work = "2.11.2"
 robolectric = "4.17"
+mavenPublish = "0.37.0"
 androidxTestCore = "1.7.0"
 junit = "4.13.2"
 composeBom = "2026.02.01"
@@ -31,4 +32,5 @@ androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-ru
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
+maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "mavenPublish" }
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
