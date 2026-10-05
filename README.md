@@ -44,7 +44,7 @@ dependencies {
 }
 ```
 
-Requires `minSdk 23`. Pure Kotlin projects can depend on `outsync-core` alone.
+Requires `minSdk 23`. Pure Kotlin and iOS projects can depend on `outsync-core` alone (JVM, `iosArm64`, `iosSimulatorArm64`, `iosX64`).
 
 ## Quick start
 
@@ -209,7 +209,7 @@ GET /notes/changes?since=<cursor>
 
 | Module | Platform | Contents |
 |---|---|---|
-| `outsync-core` | Kotlin Multiplatform | `SyncEngine`, conflict resolvers, in-memory stores |
+| `outsync-core` | Kotlin Multiplatform: JVM, Android, iOS | `SyncEngine`, conflict resolvers, in-memory stores |
 | `outsync-android` | Android | SQLite outbox, WorkManager auto-sync, `outsyncEngine()` |
 | `sample` | Android | The demo app from the video, with a simulated server |
 
@@ -219,11 +219,11 @@ GET /notes/changes?since=<cursor>
 
 ## Status
 
-Outsync is **0.1.0** and still young. The API may change before 1.0. It has 24 tests covering offline writes, coalescing, ordering, conflicts, process death and races, and it has been exercised on real devices, but run it through your own scenarios before shipping it to production.
+Outsync is **0.1.0** and still young. The API may change before 1.0. It has 24 tests covering offline writes, coalescing, ordering, conflicts, process death and races; the core suite runs on the JVM and on an iOS simulator in CI, and the Android side has been exercised on real devices, but run it through your own scenarios before shipping it to production.
 
 Planned:
 
-- iOS targets for `outsync-core`
+- A persistent outbox for iOS
 - Ready-made adapters for Room, SQLDelight and Ktor
 - Batched pushes
 - Maven Central publishing
